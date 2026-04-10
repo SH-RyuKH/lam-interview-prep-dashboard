@@ -6,6 +6,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import MockInterview from "./pages/MockInterview";
+import DailyFlashcards from "./pages/DailyFlashcards";
 
 
 function Router() {
@@ -13,6 +14,7 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/mock-interview"} component={MockInterview} />
+      <Route path={"/daily-flashcards"} component={DailyFlashcards} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

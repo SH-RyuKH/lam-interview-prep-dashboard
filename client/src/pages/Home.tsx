@@ -72,6 +72,22 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="container mx-auto px-4 py-12">
+        {/* Quick Access Buttons */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+          <Button
+            onClick={() => setLocation("/daily-flashcards")}
+            className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-6 text-lg font-bold gap-2"
+          >
+            📚 오늘의 문장
+          </Button>
+          <Button
+            onClick={() => setLocation("/mock-interview")}
+            className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white py-6 text-lg font-bold gap-2"
+          >
+            🎤 모의 면접
+          </Button>
+        </div>
+
         {/* Week Tabs */}
         <div className="flex gap-2 mb-8 overflow-x-auto pb-2">
           {interviewData.map((w, index) => (
