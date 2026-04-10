@@ -45,9 +45,22 @@ export default function DailyFlashcards() {
       window.speechSynthesis.cancel();
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = "en-US";
-      utterance.rate = 0.9;
-      utterance.pitch = 1;
+      utterance.rate = 0.85; // 자연스러운 속도
+      utterance.pitch = 1.0;
       utterance.volume = 1;
+
+      // 더 나은 음성 선택 (Google Chrome의 기본 음성)
+      const voices = window.speechSynthesis.getVoices();
+      const preferredVoice = voices.find(
+        (voice) =>
+          voice.lang.startsWith("en") &&
+          (voice.name.includes("Google") ||
+            voice.name.includes("Microsoft") ||
+            voice.name.includes("Natural"))
+      );
+      if (preferredVoice) {
+        utterance.voice = preferredVoice;
+      }
 
       utterance.onstart = () => setIsSpeaking(true);
       utterance.onend = () => setIsSpeaking(false);
@@ -125,13 +138,14 @@ export default function DailyFlashcards() {
             <div className="p-8">
               {/* Flashcard */}
               <div
-                className="relative w-full h-80 cursor-pointer perspective"
+                className="relative w-full h-80 cursor-pointer"
                 onClick={() => setIsFlipped(!isFlipped)}
+                style={{
+                  perspective: "1000px",
+                }}
               >
                 <div
-                  className={`relative w-full h-full transition-transform duration-500 transform ${
-                    isFlipped ? "scale-x-[-1]" : ""
-                  }`}
+                  className="relative w-full h-full transition-transform duration-500"
                   style={{
                     transformStyle: "preserve-3d",
                     transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
@@ -142,6 +156,7 @@ export default function DailyFlashcards() {
                     className="absolute w-full h-full bg-gradient-to-br from-blue-50 to-emerald-50 rounded-xl border-2 border-blue-200 p-8 flex flex-col items-center justify-center"
                     style={{
                       backfaceVisibility: "hidden",
+                      WebkitBackfaceVisibility: "hidden",
                     }}
                   >
                     <p className="text-sm text-gray-500 mb-4">❓ 질문</p>
@@ -158,6 +173,7 @@ export default function DailyFlashcards() {
                     className="absolute w-full h-full bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl border-2 border-emerald-200 p-8 flex flex-col items-center justify-center"
                     style={{
                       backfaceVisibility: "hidden",
+                      WebkitBackfaceVisibility: "hidden",
                       transform: "rotateY(180deg)",
                     }}
                   >
