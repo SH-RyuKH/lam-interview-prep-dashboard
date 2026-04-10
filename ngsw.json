@@ -1,0 +1,99 @@
+{
+  "configVersion": 1,
+  "timestamp": 1775859280428,
+  "index": "/lam-interview-prep-dashboard/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/lam-interview-prep-dashboard/chunk-4O3OPGK5.js",
+        "/lam-interview-prep-dashboard/chunk-5FZOKLP6.js",
+        "/lam-interview-prep-dashboard/chunk-ATS3UVXN.js",
+        "/lam-interview-prep-dashboard/chunk-BA43WR6K.js",
+        "/lam-interview-prep-dashboard/chunk-HZJCVZIR.js",
+        "/lam-interview-prep-dashboard/chunk-IBGUOIFG.js",
+        "/lam-interview-prep-dashboard/chunk-P2HWWVYZ.js",
+        "/lam-interview-prep-dashboard/chunk-VGOQ3SYN.js",
+        "/lam-interview-prep-dashboard/favicon.ico",
+        "/lam-interview-prep-dashboard/index.html",
+        "/lam-interview-prep-dashboard/main-BSFFHB3S.js",
+        "/lam-interview-prep-dashboard/manifest.webmanifest",
+        "/lam-interview-prep-dashboard/polyfills-FFHMD2TL.js",
+        "/lam-interview-prep-dashboard/styles-ZVEXUJFF.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/lam-interview-prep-dashboard/assets/data.json",
+        "/lam-interview-prep-dashboard/assets/icons/icon-128x128.png",
+        "/lam-interview-prep-dashboard/assets/icons/icon-144x144.png",
+        "/lam-interview-prep-dashboard/assets/icons/icon-152x152.png",
+        "/lam-interview-prep-dashboard/assets/icons/icon-192x192.png",
+        "/lam-interview-prep-dashboard/assets/icons/icon-384x384.png",
+        "/lam-interview-prep-dashboard/assets/icons/icon-512x512.png",
+        "/lam-interview-prep-dashboard/assets/icons/icon-72x72.png",
+        "/lam-interview-prep-dashboard/assets/icons/icon-96x96.png",
+        "/lam-interview-prep-dashboard/assets/shiba_logo.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/lam-interview-prep-dashboard/assets/data.json": "74eb445d4b67e4b3376a422c689c0dced753f304",
+    "/lam-interview-prep-dashboard/assets/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
+    "/lam-interview-prep-dashboard/assets/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
+    "/lam-interview-prep-dashboard/assets/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
+    "/lam-interview-prep-dashboard/assets/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
+    "/lam-interview-prep-dashboard/assets/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
+    "/lam-interview-prep-dashboard/assets/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
+    "/lam-interview-prep-dashboard/assets/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
+    "/lam-interview-prep-dashboard/assets/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
+    "/lam-interview-prep-dashboard/assets/shiba_logo.png": "541f3429839d3434df4bb141c4a4da808b074d80",
+    "/lam-interview-prep-dashboard/chunk-4O3OPGK5.js": "5ce5e61b4dc5745d611668d7fd2ba8d37d02f10f",
+    "/lam-interview-prep-dashboard/chunk-5FZOKLP6.js": "15d85ae44d58f9569a95e3112d9ea18d82c7a34d",
+    "/lam-interview-prep-dashboard/chunk-ATS3UVXN.js": "44f9e5752872ae060d3288c9a9e4241f28765588",
+    "/lam-interview-prep-dashboard/chunk-BA43WR6K.js": "30805b3186db9cae5bd5ce95791915dfed9ad50e",
+    "/lam-interview-prep-dashboard/chunk-HZJCVZIR.js": "3eb49c899bcc3fbe64fb4452acd2e4d3ac5931a0",
+    "/lam-interview-prep-dashboard/chunk-IBGUOIFG.js": "b8b5d7bae0a59639cf9028d46095b9fdf286979e",
+    "/lam-interview-prep-dashboard/chunk-P2HWWVYZ.js": "b0d1379c3fe60ff2b862e99387d44abdf6c224dd",
+    "/lam-interview-prep-dashboard/chunk-VGOQ3SYN.js": "c011bee403fc523211d2439268316b92370e2e8d",
+    "/lam-interview-prep-dashboard/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
+    "/lam-interview-prep-dashboard/index.html": "56de3da78ebcaf47807a572106127590be98f1b3",
+    "/lam-interview-prep-dashboard/main-BSFFHB3S.js": "62cda70094ae9fa9777c807fd54dea23bb17f626",
+    "/lam-interview-prep-dashboard/manifest.webmanifest": "b718a8f7fafcc662a75310be5705c0d01a08e704",
+    "/lam-interview-prep-dashboard/polyfills-FFHMD2TL.js": "f49b49a155bc7d192db62a4c15d0a612b460a667",
+    "/lam-interview-prep-dashboard/styles-ZVEXUJFF.css": "969a114c3231ca221b90697fcd2bd98fa812fa27"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
