@@ -1,9 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Volume2, RotateCcw, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Volume2,
+  RotateCcw,
+  ChevronLeft,
+  ChevronRight,
+  Plus,
+  X,
+} from "lucide-react";
 import { getRandomFlashcards, FlashCard } from "@/lib/flashcardData";
 import { useLocation } from "wouter";
+
+const CUSTOM_CARDS_STORAGE_KEY = "customFlashcards";
 
 export default function DailyFlashcards() {
   const [, setLocation] = useLocation();
@@ -11,25 +20,63 @@ export default function DailyFlashcards() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [newQuestion, setNewQuestion] = useState("");
+  const [newAnswer, setNewAnswer] = useState("");
+  const isSpeakingRef = useRef(false);
 
   useEffect(() => {
-    const cards = getRandomFlashcards(5);
-    setFlashcards(cards);
-    setCurrentIndex(0);
-    setIsFlipped(false);
+    loadFlashcards();
   }, []);
 
-  const loadNewCards = () => {
-    const cards = getRandomFlashcards(5);
-    setFlashcards(cards);
+  const loadFlashcards = () => {
+    const defaultCards = getRandomFlashcards(5);
+    const customCards = getCustomCards();
+    const allCards = [...defaultCards, ...customCards];
+    setFlashcards(allCards);
     setCurrentIndex(0);
     setIsFlipped(false);
+  };
+
+  const getCustomCards = (): FlashCard[] => {
+    try {
+      const stored = localStorage.getItem(CUSTOM_CARDS_STORAGE_KEY);
+      return stored ? JSON.parse(stored) : [];
+    } catch {
+      return [];
+    }
+  };
+
+  const saveCustomCard = () => {
+    if (!newQuestion.trim() || !newAnswer.trim()) {
+      alert("질문과 답변을 모두 입력해주세요.");
+      return;
+    }
+
+    const customCard: FlashCard = {
+      id: `custom-${Date.now()}`,
+      question: newQuestion,
+      answer: newAnswer,
+      category: "Custom",
+      difficulty: "medium",
+    };
+
+    const customCards = getCustomCards();
+    customCards.push(customCard);
+    localStorage.setItem(CUSTOM_CARDS_STORAGE_KEY, JSON.stringify(customCards));
+
+    // 새 카드를 현재 목록에 추가
+    setFlashcards([...flashcards, customCard]);
+    setNewQuestion("");
+    setNewAnswer("");
+    setShowAddModal(false);
   };
 
   const handleNext = () => {
     if (currentIndex < flashcards.length - 1) {
       setCurrentIndex(currentIndex + 1);
       setIsFlipped(false);
+      stopSpeech();
     }
   };
 
@@ -37,34 +84,74 @@ export default function DailyFlashcards() {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
       setIsFlipped(false);
+      stopSpeech();
+    }
+  };
+
+  const stopSpeech = () => {
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
+      setIsSpeaking(false);
+      isSpeakingRef.current = false;
     }
   };
 
   const speakText = (text: string) => {
     if ("speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
+      // 이미 재생 중이면 정지
+      if (isSpeakingRef.current) {
+        stopSpeech();
+        return;
+      }
+
+      // 음성 재생
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = "en-US";
-      utterance.rate = 0.85; // 자연스러운 속도
+      utterance.rate = 1.0; // 정상 속도
       utterance.pitch = 1.0;
       utterance.volume = 1;
 
-      // 더 나은 음성 선택 (Google Chrome의 기본 음성)
+      // 음성 선택 - 우선순위: Google > Microsoft > Safari > 기본
       const voices = window.speechSynthesis.getVoices();
-      const preferredVoice = voices.find(
+      let selectedVoice = null;
+
+      // 1. Google 음성 찾기
+      selectedVoice = voices.find(
         (voice) =>
           voice.lang.startsWith("en") &&
-          (voice.name.includes("Google") ||
-            voice.name.includes("Microsoft") ||
-            voice.name.includes("Natural"))
+          voice.name.includes("Google") &&
+          voice.name.includes("US")
       );
-      if (preferredVoice) {
-        utterance.voice = preferredVoice;
+
+      // 2. 없으면 Microsoft 음성 찾기
+      if (!selectedVoice) {
+        selectedVoice = voices.find(
+          (voice) =>
+            voice.lang.startsWith("en") && voice.name.includes("Microsoft")
+        );
       }
 
-      utterance.onstart = () => setIsSpeaking(true);
-      utterance.onend = () => setIsSpeaking(false);
-      utterance.onerror = () => setIsSpeaking(false);
+      // 3. 없으면 en-US 음성 중 첫 번째 선택
+      if (!selectedVoice) {
+        selectedVoice = voices.find((voice) => voice.lang === "en-US");
+      }
+
+      if (selectedVoice) {
+        utterance.voice = selectedVoice;
+      }
+
+      utterance.onstart = () => {
+        setIsSpeaking(true);
+        isSpeakingRef.current = true;
+      };
+      utterance.onend = () => {
+        setIsSpeaking(false);
+        isSpeakingRef.current = false;
+      };
+      utterance.onerror = () => {
+        setIsSpeaking(false);
+        isSpeakingRef.current = false;
+      };
 
       window.speechSynthesis.speak(utterance);
     }
@@ -120,13 +207,22 @@ export default function DailyFlashcards() {
               <h1 className="text-4xl font-bold mb-2">📚 오늘의 문장</h1>
               <p className="text-blue-100">매일 새로운 영어 표현 학습</p>
             </div>
-            <Button
-              onClick={() => setLocation("/")}
-              variant="outline"
-              className="text-white border-white hover:bg-white hover:text-blue-700"
-            >
-              ← 돌아가기
-            </Button>
+            <div className="flex gap-2">
+              <Button
+                onClick={() => setShowAddModal(true)}
+                className="bg-emerald-500 hover:bg-emerald-600 text-white gap-2"
+              >
+                <Plus className="w-4 h-4" />
+                추가
+              </Button>
+              <Button
+                onClick={() => setLocation("/")}
+                variant="outline"
+                className="text-white border-white hover:bg-white hover:text-blue-700"
+              >
+                ← 돌아가기
+              </Button>
+            </div>
           </div>
         </div>
       </header>
@@ -196,12 +292,16 @@ export default function DailyFlashcards() {
                       isFlipped ? currentCard.answer : currentCard.question
                     )
                   }
-                  className="gap-2 bg-blue-600 hover:bg-blue-700 text-white"
+                  className={`gap-2 ${
+                    isSpeaking
+                      ? "bg-red-600 hover:bg-red-700"
+                      : "bg-blue-600 hover:bg-blue-700"
+                  } text-white`}
                 >
                   {isSpeaking ? (
                     <>
                       <span className="animate-spin">🔊</span>
-                      재생 중...
+                      정지
                     </>
                   ) : (
                     <>
@@ -247,7 +347,7 @@ export default function DailyFlashcards() {
             </Button>
 
             <Button
-              onClick={loadNewCards}
+              onClick={loadFlashcards}
               className="flex-1 bg-emerald-600 hover:bg-emerald-700 text-white gap-2"
             >
               <RotateCcw className="w-4 h-4" />
@@ -275,6 +375,74 @@ export default function DailyFlashcards() {
           </Button>
         </div>
       </main>
+
+      {/* Add Modal */}
+      {showAddModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <Card className="bg-white border-0 shadow-2xl w-full max-w-md mx-4">
+            <div className="p-8">
+              <div className="flex items-center justify-between mb-6">
+                <h2 className="text-2xl font-bold text-gray-900">
+                  새 카드 추가
+                </h2>
+                <button
+                  onClick={() => setShowAddModal(false)}
+                  className="text-gray-500 hover:text-gray-700"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+
+              <div className="space-y-4">
+                {/* Question Input */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    ❓ 질문
+                  </label>
+                  <textarea
+                    value={newQuestion}
+                    onChange={(e) => setNewQuestion(e.target.value)}
+                    placeholder="질문을 입력하세요..."
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                    rows={3}
+                  />
+                </div>
+
+                {/* Answer Input */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    ✅ 답변
+                  </label>
+                  <textarea
+                    value={newAnswer}
+                    onChange={(e) => setNewAnswer(e.target.value)}
+                    placeholder="답변을 입력하세요..."
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                    rows={4}
+                  />
+                </div>
+
+                {/* Buttons */}
+                <div className="flex gap-3 pt-4">
+                  <Button
+                    onClick={() => setShowAddModal(false)}
+                    variant="outline"
+                    className="flex-1"
+                  >
+                    취소
+                  </Button>
+                  <Button
+                    onClick={saveCustomCard}
+                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white"
+                  >
+                    추가
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+      )}
     </div>
   );
 }
