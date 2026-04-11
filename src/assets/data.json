@@ -1,0 +1,302 @@
+[
+  {
+    "id": "q1",
+    "category": "Personality",
+    "question": "Tell me about yourself.",
+    "answer": "I am a Senior MES Developer at DB HiTek with 5 years of experience in C#, C, and Oracle DB. I specialize in bridging semiconductor hardware with software systems, recently earning a promotion to Senior Engineer for my work in automation and system reliability."
+  },
+  {
+    "id": "q2",
+    "category": "Personality",
+    "question": "Why Lam Research?",
+    "answer": "Lam KTC is a hub for global R&D. I want to contribute my site-level MES expertise to build a next-generation platform for R&D lab automation. Also, living in Shindongtan makes Lam's Giheung office an ideal location for long-term commitment."
+  },
+  {
+    "id": "q3",
+    "category": "Technical",
+    "question": "What is your experience with CM (Critical Manufacturing) platform?",
+    "answer": "While I have mainly used in-house MES, I have studied CM's architecture. It shares 80% of its foundation with my current stack (C#, Oracle). I am confident in mastering its specific modules within a few weeks."
+  },
+  {
+    "id": "q4",
+    "category": "Technical",
+    "question": "Describe the MOCVD batch processing project.",
+    "answer": "I developed logic to split 15 wafers into 5-wafer batches by grade. The system automatically created 'EPI Lots' once 17 matching wafers were ready, ensuring 100% traceability and optimizing fab efficiency."
+  },
+  {
+    "id": "q5",
+    "category": "Technical",
+    "question": "How did you solve the wireless printer issue?",
+    "answer": "Due to LAN port shortages, I integrated wireless printers using a custom ZPL-to-TSPL real-time conversion program. This bypassed protocol mismatches and saved significant infrastructure costs."
+  },
+  {
+    "id": "q6",
+    "category": "Technical",
+    "question": "Tell us about your AI project for CD-SEM.",
+    "answer": "I automated sample confirmation by building a Python tool that fetches CD-SEM images via FTP and uses an AI model to recognize numeric values, reducing manual engineer workload by 90%."
+  },
+  {
+    "id": "q7",
+    "category": "Behavioral",
+    "question": "How do you handle conflict with other teams?",
+    "answer": "In an auto-sort system dispute, I created an 'Authorized Group' for the Production team to allow flexible process skips while maintaining safety logs. This satisfied both technical and operational requirements."
+  },
+  {
+    "id": "q8",
+    "category": "Behavioral",
+    "question": "What is your greatest professional achievement?",
+    "answer": "Being promoted to Senior Engineer (책임) in early 2026 was a major milestone. It recognized my ability to lead critical MES migrations and innovate systems like the AI-based CD-SEM recognition."
+  },
+  {
+    "id": "q9",
+    "category": "Behavioral",
+    "question": "Describe a time you failed and how you handled it.",
+    "answer": "Early on, I missed a DB index optimization that slowed a report. I took responsibility, fixed it within an hour, and created a SQL review checklist to prevent similar issues for the entire team."
+  },
+  {
+    "id": "q10",
+    "category": "Personality",
+    "question": "What are your career goals?",
+    "answer": "I aim to become a Global MES Architect at Lam Research, leading the digital transformation of R&D centers worldwide through the CM platform and advanced AI analytics."
+  },
+  {
+    "id": "q11",
+    "category": "Technical",
+    "question": "How do you optimize Oracle DB performance?",
+    "answer": "I focus on query execution plans, proper indexing, and partitioning large tables. For an MES with millions of rows, I ensure 'hot' transaction data is processed separately from historical data."
+  },
+  {
+    "id": "q12",
+    "category": "Technical",
+    "question": "Explain socket communication in your C-server.",
+    "answer": "I use structured TCP/IP socket communication to ensure reliable, low-latency data transfer between the C-based server and C# client, which is vital for real-time wafer tracking."
+  },
+  {
+    "id": "q13",
+    "category": "Behavioral",
+    "question": "How do you prioritize multiple urgent tasks?",
+    "answer": "I categorize tasks by 'Impact on Production' and 'Deadline.' I use Jira to track progress and communicate with stakeholders early if any resource conflicts arise."
+  },
+  {
+    "id": "q14",
+    "category": "Lam Research",
+    "question": "How do you feel about working with a global manager?",
+    "answer": "I look forward to it. I focus on technical clarity and use diagrams and documentation to bridge language gaps. I believe technical alignment is the key to successful global collaboration."
+  },
+  {
+    "id": "q15",
+    "category": "Technical",
+    "question": "What is the difference between MES for R&D vs Mass Production?",
+    "answer": "Mass production focuses on throughput and stability, while R&D requires high flexibility for frequent process changes. An R&D MES must allow researchers to modify parameters without full system deployments."
+  },
+  {
+    "id": "q16",
+    "category": "Behavioral",
+    "question": "How do you mentor junior developers?",
+    "answer": "I focus on the 'Why' behind the code. I encourage juniors to understand the semiconductor process first, as domain knowledge is what makes our software meaningful."
+  },
+  {
+    "id": "q17",
+    "category": "Personality",
+    "question": "What is your biggest weakness?",
+    "answer": "I used to be a 'perfectionist' who spent too much time on independent troubleshooting. Now, I proactively seek peer reviews and share updates early to ensure project speed."
+  },
+  {
+    "id": "q18",
+    "category": "Technical",
+    "question": "How do you handle 'Dirty Reads' in Oracle DB?",
+    "answer": "I utilize proper transaction isolation levels and 'Select for Update' locks when necessary to ensure data consistency during simultaneous lot movements."
+  },
+  {
+    "id": "q19",
+    "category": "Lam Research",
+    "question": "What do you know about Lam's Giheung R&D Center?",
+    "answer": "It's a state-of-the-art facility (KTC) focused on next-gen semiconductor equipment. My role would involve digitalizing these R&D workflows using the CM platform."
+  },
+  {
+    "id": "q20",
+    "category": "Technical",
+    "question": "Describe your experience with C# multithreading.",
+    "answer": "I use Task Parallel Library (TPL) in C# to handle multiple UI updates and background data fetching, ensuring the MES client remains responsive even under heavy load."
+  },
+  {
+    "id": "q21",
+    "category": "Behavioral",
+    "question": "Give an example of a time you went above and beyond.",
+    "answer": "When we lacked a dedicated data tool, I built a custom Python dashboard for engineers in my own time. It eventually became the standard for our team's daily data reporting."
+  },
+  {
+    "id": "q22",
+    "category": "Technical",
+    "question": "How do you ensure code quality?",
+    "answer": "I adhere to SOLID principles and use static analysis tools. I also believe that meaningful unit testing for core business logic is essential for long-term system stability."
+  },
+  {
+    "id": "q23",
+    "category": "Behavioral",
+    "question": "How do you handle tight deadlines?",
+    "answer": "I break the project into MVPs (Minimum Viable Products). I ensure the core 'Lot Tracking' works first, then iteratively add features like advanced reporting to meet the delivery date."
+  },
+  {
+    "id": "q24",
+    "category": "Personality",
+    "question": "How would your colleagues describe you?",
+    "answer": "They would describe me as a reliable problem-solver who can bridge the gap between legacy systems (C/C++) and modern technologies (AI/Python)."
+  },
+  {
+    "id": "q25",
+    "category": "Technical",
+    "question": "Explain the concept of 'Traceability' in MES.",
+    "answer": "Traceability is the ability to track every single event for a wafer—from raw material to finished product—including equipment history, operator IDs, and measurement data."
+  },
+  {
+    "id": "q26",
+    "category": "Technical",
+    "question": "What is your approach to API design?",
+    "answer": "I follow RESTful principles, focusing on resource-oriented endpoints, clear status codes, and thorough documentation (Swagger) to ensure easy integration with other systems."
+  },
+  {
+    "id": "q27",
+    "category": "Behavioral",
+    "question": "What do you do when you disagree with your manager?",
+    "answer": "I present data-backed alternatives. If my manager still chooses a different path, I commit to that decision and work my hardest to make it successful while monitoring for risks."
+  },
+  {
+    "id": "q28",
+    "category": "Personality",
+    "question": "What motivates you as a developer?",
+    "answer": "Solving real-world problems that improve manufacturing yield. Seeing my code directly affect the efficiency of a semiconductor FAB is incredibly rewarding."
+  },
+  {
+    "id": "q29",
+    "category": "Technical",
+    "question": "How do you handle large file uploads (like logs) in C#?",
+    "answer": "I use buffered streams or chunked uploads to prevent memory overflow, ensuring the system can handle large equipment logs without crashing the client."
+  },
+  {
+    "id": "q30",
+    "category": "Lam Research",
+    "question": "What is your salary expectation?",
+    "answer": "Based on my 5 years of experience and the specific expertise required for the CM platform, I am targeting a total package around 98 million KRW."
+  },
+  {
+    "id": "q31",
+    "category": "Behavioral",
+    "question": "Describe a difficult technical bug you solved.",
+    "answer": "I once tracked down a memory leak in a C-server that only occurred during specific batch splits. I used GDB and memory profilers to identify a pointer that wasn't being freed in a rare edge case."
+  },
+  {
+    "id": "q32",
+    "category": "Technical",
+    "question": "What is a 'Stored Procedure' and why use it?",
+    "answer": "It's code stored in the DB. I use it for complex, data-heavy operations to reduce network traffic and take advantage of Oracle's pre-compiled execution plans."
+  },
+  {
+    "id": "q33",
+    "category": "Personality",
+    "question": "How do you stay updated with new technology?",
+    "answer": "I regularly read tech blogs, participate in AI/data analysis workshops, and build side projects like this English interview prep app using Angular and TypeScript."
+  },
+  {
+    "id": "q34",
+    "category": "Behavioral",
+    "question": "Tell us about a time you showed leadership.",
+    "answer": "During a system migration, I took the lead in training the production team. I created a simplified manual and held Q&A sessions, resulting in zero operational errors during the transition."
+  },
+  {
+    "id": "q35",
+    "category": "Technical",
+    "question": "What is the role of an ERP in relation to an MES?",
+    "answer": "ERP handles 'What to make' (planning/business), while MES handles 'How to make it' (execution/real-time). I ensure the handshake between the two is seamless for accurate production data."
+  },
+  {
+    "id": "q36",
+    "category": "Behavioral",
+    "question": "How do you handle a toxic teammate?",
+    "answer": "I stay professional and focus strictly on the task. I try to understand their perspective, but if it affects project delivery, I escalate it to my manager with specific facts."
+  },
+  {
+    "id": "q37",
+    "category": "Technical",
+    "question": "What are the benefits of using Angular for an MES UI?",
+    "answer": "Angular provides a robust component-based architecture and two-way data binding, which is excellent for creating complex, real-time dashboards like equipment monitors."
+  },
+  {
+    "id": "q38",
+    "category": "Lam Research",
+    "question": "Are you willing to travel to Singapore or the US for training?",
+    "answer": "Absolutely. I am eager to learn from Lam's global experts and bring that knowledge back to the KTC team in Korea."
+  },
+  {
+    "id": "q39",
+    "category": "Technical",
+    "question": "Explain 'Deadlock' in a database.",
+    "answer": "It's when two processes hold locks that the other needs. I prevent this by ensuring all transactions access resources in a consistent, predefined order."
+  },
+  {
+    "id": "q40",
+    "category": "Behavioral",
+    "question": "Describe a time you had to work with a difficult user.",
+    "answer": "A production manager was frustrated with a new UI. I sat down with them, listened to their pain points, and made three small UI tweaks that saved them significant clicks, winning their support."
+  },
+  {
+    "id": "q41",
+    "category": "Personality",
+    "question": "What are your hobbies?",
+    "answer": "I'm a long-time Liverpool FC fan and enjoy playing futsal. I also enjoy console gaming and building small data-driven web applications."
+  },
+  {
+    "id": "q42",
+    "category": "Technical",
+    "question": "What is CI/CD in the context of MES?",
+    "answer": "It's the automated process of testing and deploying code. I believe automating the deployment of MES patches is key to reducing human error in the FAB."
+  },
+  {
+    "id": "q43",
+    "category": "Behavioral",
+    "question": "How do you handle constructive criticism?",
+    "answer": "I see it as an opportunity to grow. I listen, take notes, and ask for specific examples so I can improve my performance immediately."
+  },
+  {
+    "id": "q44",
+    "category": "Technical",
+    "question": "What is an 'Inner Join' vs 'Left Join' in Oracle?",
+    "answer": "Inner join returns records with matching values in both tables, while left join returns all records from the left table and matched records from the right. I use left joins when I need to see lots that might not have measurement data yet."
+  },
+  {
+    "id": "q45",
+    "category": "Lam Research",
+    "question": "Do you have any reverse questions for us?",
+    "answer": "How does the team balance standard CM features with the unique, fast-changing requirements of a global R&D center like KTC?"
+  },
+  {
+    "id": "q46",
+    "category": "Behavioral",
+    "question": "What would you do if a system went down at 3 AM?",
+    "answer": "As a senior engineer, I am prepared for on-call duties. I would first stabilize the FAB, then conduct a thorough Root Cause Analysis (RCA) to prevent recurrence."
+  },
+  {
+    "id": "q47",
+    "category": "Technical",
+    "question": "What is the importance of Data Integrity in MES?",
+    "answer": "In semiconductors, incorrect data can lead to scrap wafers worth millions. I implement strict validation logic at both the UI and DB levels to ensure data accuracy."
+  },
+  {
+    "id": "q48",
+    "category": "Personality",
+    "question": "Where do you want to be in 10 years?",
+    "answer": "I hope to be a key leader in Lam Research's global IT planning division, shaping the future of smart manufacturing across the semiconductor industry."
+  },
+  {
+    "id": "q49",
+    "category": "Technical",
+    "question": "Explain 'Normalization' in DB design.",
+    "answer": "It's the process of organizing data to reduce redundancy. In MES, we normalize to ensure that process changes only need to be updated in one place."
+  },
+  {
+    "id": "q50",
+    "category": "Personality",
+    "question": "Why should we hire you over other candidates?",
+    "answer": "I offer a unique blend of 5 years of deep semiconductor MES experience, advanced AI/Python skills, and a proven ability to master new platforms like CM quickly. I am ready to deliver results for Lam KTC from day one."
+  }
+]
