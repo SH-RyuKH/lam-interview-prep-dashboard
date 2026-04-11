@@ -3,55 +3,55 @@
     "id": "q1",
     "category": "Personality",
     "question": "Tell me about yourself.",
-    "answer": "I am a Senior MES Developer at DB HiTek with 5 years of experience in C#, C, and Oracle DB. I specialize in bridging semiconductor hardware with software systems, recently earning a promotion to Senior Engineer for my work in automation and system reliability."
+    "answer": "Hello, my name is KunHwi Ryu, and I am a MES developer with about 5 years of experience in semiconductor manufacturing systems.\nCurrently, I work at DB HiTek where I develop and operate MES systems focusing on process automation, equipment interlock, and manufacturing data analysis.\nMy main technical strengths are C, C#, Oracle database, and Python for data analytics.\nRecently I have been focusing on improving manufacturing efficiency through automation and data-driven decision systems.\nI have also worked closely with process engineers and manufacturing teams to translate their requirements into MES solutions.\nI am particularly interested in this position because it involves global MES development and R&D workflow systems, which I believe matches well with my experience in manufacturing process optimization and system integration.\nI am especially motivated to work in a global environment and expand my MES expertise into more advanced platforms."
   },
   {
     "id": "q2",
     "category": "Personality",
     "question": "Why Lam Research?",
-    "answer": "Lam KTC is a hub for global R&D. I want to contribute my site-level MES expertise to build a next-generation platform for R&D lab automation. Also, living in Shindongtan makes Lam's Giheung office an ideal location for long-term commitment."
+    "answer": "I want to join Lam Research for three main reasons.\nFirst, Lam Research is a global leader in semiconductor equipment, and I want to grow in a more advanced global engineering environment.\nSecond, this role focuses on MES for R&D environments, which is very interesting to me because it involves experiment tracking and engineering workflows, not just mass production MES.\nThird, I am very interested in learning the Critical Manufacturing MES platform because I believe learning global MES platforms will significantly expand my technical capability.\nI believe this position is a very good opportunity to grow from a fab MES engineer into a global MES engineer."
   },
   {
     "id": "q3",
     "category": "Technical",
     "question": "What is your experience with CM (Critical Manufacturing) platform?",
-    "answer": "While I have mainly used in-house MES, I have studied CM's architecture. It shares 80% of its foundation with my current stack (C#, Oracle). I am confident in mastering its specific modules within a few weeks."
+    "answer": "I am confident in learning new MES platforms quickly.\nBecause MES systems share common concepts such as workflow, material tracking, equipment integration, and data collection.\nWhen learning new systems, I usually first understand architecture, then data model, then customization logic.\nI have adapted to new internal systems quickly before using this approach.\nSo I believe I can also learn Critical Manufacturing MES effectively."
   },
   {
     "id": "q4",
     "category": "Technical",
     "question": "Describe the MOCVD batch processing project.",
-    "answer": "I developed logic to split 15 wafers into 5-wafer batches by grade. The system automatically created 'EPI Lots' once 17 matching wafers were ready, ensuring 100% traceability and optimizing fab efficiency."
+    "answer": "My most challenging project was integrating the MOCVD process, which didn't follow our standard 25-wafer system. It was complex because we had to split 15 wafers into 5-wafer batches for processing. I developed a custom logic to classify wafers by grade and monitor their counts. Once we gathered 17 wafers of the same grade, the system automatically created a new 'EPI Lot' for inventory or sale. To handle this, I designed a flexible Lot Genealogy system. This ensured 100% wafer-level traceability, even when these Lots were reintroduced into mass production. This significantly improved our data accuracy and production efficiency."
   },
   {
     "id": "q5",
     "category": "Technical",
     "question": "How did you solve the wireless printer issue?",
-    "answer": "Due to LAN port shortages, I integrated wireless printers using a custom ZPL-to-TSPL real-time conversion program. This bypassed protocol mismatches and saved significant infrastructure costs."
+    "answer": "I solved a big problem by setting up wireless printers in the line. We didn't have enough LAN ports, so the manufacturing team suggested using Wi-Fi. But it was hard because our FAB only allows 'Static IPs' for security. I had to manually configure each printer's network to follow these strict rules. Also, I had a language issue. Our MES uses ZPL, but the new printers use TSPL. So, I wrote a simple program to convert ZPL into TSPL in real-time. In the end, we saved a lot of money on infrastructure costs. The team is very happy because they can now print labels anywhere in the line."
   },
   {
     "id": "q6",
     "category": "Technical",
     "question": "Tell us about your AI project for CD-SEM.",
-    "answer": "I automated sample confirmation by building a Python tool that fetches CD-SEM images via FTP and uses an AI model to recognize numeric values, reducing manual engineer workload by 90%."
+    "answer": "I am currently developing an automated sample confirmation system using CD-SEM images.\nBefore, engineers had to manually check and compare data every morning. \nTo automate this, I designed a system that downloads CD images from equipment via FTP.\nThen, my AI model recognizes the numeric values within the images. \nThe system automatically sends these values to the MES to verify if they match the system data.\nThis automation will significantly reduce manual work and save a lot of time for our engineers."
   },
   {
     "id": "q7",
     "category": "Behavioral",
     "question": "How do you handle conflict with other teams?",
-    "answer": "In an auto-sort system dispute, I created an 'Authorized Group' for the Production team to allow flexible process skips while maintaining safety logs. This satisfied both technical and operational requirements."
+    "answer": "I made a new system for batch processing.\nI develped the batch auto sort system. \nIn this system, the first and last Lots must be measured. \nBut the Production team and the Engineering team had different opinions about skipping this process.\nThe engineers wanted to allow manual skips to production team at night when they were not there. \nBut the Production team was worried about making mistakes without an engineer.\nTo solve this, I created a special group within the Production team. \nOnly authorized members could skip the process. \nThis satisfied both teams because the system was now safe and flexible."
   },
   {
     "id": "q8",
     "category": "Behavioral",
     "question": "What is your greatest professional achievement?",
-    "answer": "Being promoted to Senior Engineer (책임) in early 2026 was a major milestone. It recognized my ability to lead critical MES migrations and innovate systems like the AI-based CD-SEM recognition."
+    "answer": "My greatest achievement was being promoted to Senior Engineer in 2026, which recognized my lead role in the MOCVD integration project. I took ownership of the entire system architecture from end-to-end. By designing the logic for complex batch processing and ensuring seamless data flow, I realized my potential to handle high-stakes, full-scale system designs that directly improve fab productivity."
   },
   {
     "id": "q9",
     "category": "Behavioral",
     "question": "Describe a time you failed and how you handled it.",
-    "answer": "Early on, I missed a DB index optimization that slowed a report. I took responsibility, fixed it within an hour, and created a SQL review checklist to prevent similar issues for the entire team."
+    "answer": "While optimizing the automated Defect Management logic, I encountered a bug that caused lot processing to stall. I immediately performed a root cause analysis and deployed a patch to stabilize the line. This taught me that in a semiconductor environment, every line of code directly impacts production. Since then, I have adopted a rigorous testing and validation process to ensure 100% system reliability."
   },
   {
     "id": "q10",
@@ -75,13 +75,13 @@
     "id": "q13",
     "category": "Behavioral",
     "question": "How do you prioritize multiple urgent tasks?",
-    "answer": "I categorize tasks by 'Impact on Production' and 'Deadline.' I use Jira to track progress and communicate with stakeholders early if any resource conflicts arise."
+    "answer": "When handling multiple tasks, I align my priorities with the team and company's goals rather than deciding in isolation. I regularly consult with my manager and coordinate schedules with other departments. This collaborative approach ensures that the most critical production-related issues are addressed first while maintaining technical alignment across the organization."
   },
   {
     "id": "q14",
     "category": "Lam Research",
     "question": "How do you feel about working with a global manager?",
-    "answer": "I look forward to it. I focus on technical clarity and use diagrams and documentation to bridge language gaps. I believe technical alignment is the key to successful global collaboration."
+    "answer": "I have experience communicating technical topics in English during audits and documentation reviews.\nWhen communicating, I try to focus on clarity rather than complex expressions.\nI usually prepare key technical points in advance and explain them using simple structure.\nIf there is misunderstanding, I confirm again using diagrams or examples.\nI believe technical communication is more about clarity than perfect English."
   },
   {
     "id": "q15",
@@ -93,13 +93,13 @@
     "id": "q16",
     "category": "Behavioral",
     "question": "How do you mentor junior developers?",
-    "answer": "I focus on the 'Why' behind the code. I encourage juniors to understand the semiconductor process first, as domain knowledge is what makes our software meaningful."
+    "answer": "I take a structured approach to mentoring. I first ensure they understand the core system architecture and source code. Then, I provide scenario-based training on lot processing to prepare them for various real-world fab situations. My goal is to build their independence by sharing not just the 'how,' but the technical 'why' behind our processes."
   },
   {
     "id": "q17",
     "category": "Personality",
     "question": "What is your biggest weakness?",
-    "answer": "I used to be a 'perfectionist' who spent too much time on independent troubleshooting. Now, I proactively seek peer reviews and share updates early to ensure project speed."
+    "answer": "My weakness is that I sometimes over-analyze situations, which can lead to hesitation. To overcome this, I make it a point to communicate my thoughts early with colleagues and managers. This proactive sharing helps me gain diverse perspectives and allows for faster, more confident decision-making."
   },
   {
     "id": "q18",
@@ -123,7 +123,7 @@
     "id": "q21",
     "category": "Behavioral",
     "question": "Give an example of a time you went above and beyond.",
-    "answer": "When we lacked a dedicated data tool, I built a custom Python dashboard for engineers in my own time. It eventually became the standard for our team's daily data reporting."
+    "answer": "I developed a Python-based automation tool for cleaning PCM raw data, which reduced engineer workload from half a day to just 30 minutes. The tool automates data uploads, parameter cleaning, and outlier removal while providing real-time statistical analysis and visualizations. This 90% reduction in processing time allowed our engineers to focus more on high-level analysis rather than manual data entry."
   },
   {
     "id": "q22",
@@ -135,7 +135,7 @@
     "id": "q23",
     "category": "Behavioral",
     "question": "How do you handle tight deadlines?",
-    "answer": "I break the project into MVPs (Minimum Viable Products). I ensure the core 'Lot Tracking' works first, then iteratively add features like advanced reporting to meet the delivery date."
+    "answer": "I prioritize tasks based on their impact on production and focus on the most critical items first. If a deadline is at risk, I proactively communicate with the stakeholders to manage expectations and adjust schedules early. I believe transparency and early communication are key to maintaining project integrity under tight deadlines."
   },
   {
     "id": "q24",
@@ -159,7 +159,7 @@
     "id": "q27",
     "category": "Behavioral",
     "question": "What do you do when you disagree with your manager?",
-    "answer": "I present data-backed alternatives. If my manager still chooses a different path, I commit to that decision and work my hardest to make it successful while monitoring for risks."
+    "answer": "I highly value my manager's experience and expertise, so I generally respect their direction. However, if I have a data-backed alternative, I professionally present my suggestions to find the best middle ground. Once a final decision is made, I fully commit to it and work hard to make the project successful."
   },
   {
     "id": "q28",
@@ -177,13 +177,13 @@
     "id": "q30",
     "category": "Lam Research",
     "question": "What is your salary expectation?",
-    "answer": "Based on my 5 years of experience and the specific expertise required for the CM platform, I am targeting a total package around 98 million KRW."
+    "answer": "My current total package is around 83 million KRW, with a base salary of 65 million. Considering the move to a global leader like Lam Research and the specific expertise I bring in MES and automation, I am targeting a base salary of 80 million KRW. However, I am open to discussing the total compensation package based on Lam's incentive structure."
   },
   {
     "id": "q31",
     "category": "Behavioral",
     "question": "Describe a difficult technical bug you solved.",
-    "answer": "I once tracked down a memory leak in a C-server that only occurred during specific batch splits. I used GDB and memory profilers to identify a pointer that wasn't being freed in a rare edge case."
+    "answer": "The most challenging issue was a database hang caused by a version-specific Oracle bug. My first priority was fab stability, so I immediately switched to a redundant server and restarted the systems to restore lot processing within 5 minutes. Afterward, I collaborated with database administrators and Oracle support to implement a permanent patch, ensuring the issue wouldn't recur."
   },
   {
     "id": "q32",
@@ -195,7 +195,7 @@
     "id": "q33",
     "category": "Personality",
     "question": "How do you stay updated with new technology?",
-    "answer": "I regularly read tech blogs, participate in AI/data analysis workshops, and build side projects like this English interview prep app using Angular and TypeScript."
+    "answer": "I am very interested in AI and data analysis. Recently, I took an advanced Python course at my company to update my skills. Last year, I developed a Python program to automate raw data handling. Before, engineers handled messy Excel data manually. My program cleans the data and creates visual graphs automatically. This system improved data accuracy and saved a lot of time. Now, I am working on a new project to apply AI models to our MES."
   },
   {
     "id": "q34",
@@ -243,7 +243,7 @@
     "id": "q41",
     "category": "Personality",
     "question": "What are your hobbies?",
-    "answer": "I'm a long-time Liverpool FC fan and enjoy playing futsal. I also enjoy console gaming and building small data-driven web applications."
+    "answer": "I enjoy staying active through weight training and futsal, which helps me maintain the physical and mental stamina needed for a demanding engineering role. I also enjoy console gaming as a way to unwind and recharge my focus."
   },
   {
     "id": "q42",
@@ -267,13 +267,13 @@
     "id": "q45",
     "category": "Lam Research",
     "question": "Do you have any reverse questions for us?",
-    "answer": "How does the team balance standard CM features with the unique, fast-changing requirements of a global R&D center like KTC?"
+    "answer": "I have two questions. First, what would be the most critical milestones or projects you would expect me to focus on during my first six months? Second, how does the team typically communicate and collaborate when solving complex technical challenges?"
   },
   {
     "id": "q46",
     "category": "Behavioral",
     "question": "What would you do if a system went down at 3 AM?",
-    "answer": "As a senior engineer, I am prepared for on-call duties. I would first stabilize the FAB, then conduct a thorough Root Cause Analysis (RCA) to prevent recurrence."
+    "answer": "I fully understand that a semiconductor FAB operates 24/7. As a senior MES engineer, I always stay reachable after hours. In fact, I currently handle on-call requests once or twice a week. I am committed to taking immediate action whenever a critical system issue arises to minimize any downtime in the FAB."
   },
   {
     "id": "q47",
@@ -297,6 +297,6 @@
     "id": "q50",
     "category": "Personality",
     "question": "Why should we hire you over other candidates?",
-    "answer": "I offer a unique blend of 5 years of deep semiconductor MES experience, advanced AI/Python skills, and a proven ability to master new platforms like CM quickly. I am ready to deliver results for Lam KTC from day one."
+    "answer": "That’s a great question. While my major was Electronics and Information Engineering, I became fascinated by how software acts as the 'brain' of complex hardware systems.\nTo pursue this passion, I proactively took CS-related courses such as Data Structures and AI, Programming, which weren't mandatory for my major.\nI also spent a lot of time self-studying modern frameworks and database optimization. \nThis journey from an Electronics major to a Professional MES Developer proves my ability to learn new technologies rapidly and independently.\nAt Lam Research, we use a global MES platform with TypeScript and Angular.\nI am confident that my 'self-starter' mindset will allow me to master these new stacks quickly and bridge the gap between semiconductor hardware and software systems."
   }
 ]
