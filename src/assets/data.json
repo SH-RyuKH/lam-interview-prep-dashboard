@@ -60,12 +60,6 @@
     "answer": "I aim to become a Global MES Architect at Lam Research, leading the digital transformation of R&D centers worldwide through the CM platform and advanced AI analytics."
   },
   {
-    "id": "q11",
-    "category": "Technical",
-    "question": "How do you optimize Oracle DB performance?",
-    "answer": "I focus on query execution plans, proper indexing, and partitioning large tables. For an MES with millions of rows, I ensure 'hot' transaction data is processed separately from historical data."
-  },
-  {
     "id": "q12",
     "category": "Technical",
     "question": "Explain socket communication in your C-server.",
