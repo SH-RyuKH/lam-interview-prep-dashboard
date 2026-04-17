@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1775921397946,
+  "timestamp": 1776416778966,
   "index": "/lam-interview-prep-dashboard/index.html",
   "assetGroups": [
     {
@@ -52,7 +52,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/lam-interview-prep-dashboard/assets/data.json": "53e8c263da7c775b46968c5990e582c6b9ac802c",
+    "/lam-interview-prep-dashboard/assets/data.json": "2be507bf7f46e647e0cbf46866b745731aacc0e5",
     "/lam-interview-prep-dashboard/assets/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
     "/lam-interview-prep-dashboard/assets/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
     "/lam-interview-prep-dashboard/assets/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
