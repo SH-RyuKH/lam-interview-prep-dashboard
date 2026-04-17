@@ -13,284 +13,170 @@
   },
   {
     "id": "q3",
-    "category": "Technical",
-    "question": "What is your experience with CM (Critical Manufacturing) platform?",
-    "answer": "I am confident in learning new MES platforms quickly.\nBecause MES systems share common concepts such as workflow, material tracking, equipment integration, and data collection.\nWhen learning new systems, I usually first understand architecture, then data model, then customization logic.\nI have adapted to new internal systems quickly before using this approach.\nSo I believe I can also learn Critical Manufacturing MES effectively."
+    "category": "Personality",
+    "question": "Why should we hire you over other candidates?",
+    "answer": "That’s a great question. While my major was Electronics and Information Engineering, I became fascinated by how software acts as the 'brain' of complex hardware systems.\nTo pursue this passion, I proactively took CS-related courses such as Data Structures and AI, Programming, which weren't mandatory for my major.\nI also spent a lot of time self-studying modern frameworks and database optimization. \nThis journey from an Electronics major to a Professional MES Developer proves my ability to learn new technologies rapidly and independently.\nAt Lam Research, we use a global MES platform with TypeScript and Angular.\nI am confident that my 'self-starter' mindset will allow me to master these new stacks quickly and bridge the gap between semiconductor hardware and software systems."
   },
   {
     "id": "q4",
-    "category": "Technical",
-    "question": "Describe the MOCVD batch processing project.",
-    "answer": "My most challenging project was integrating the MOCVD process, which didn't follow our standard 25-wafer system. It was complex because we had to split 15 wafers into 5-wafer batches for processing. I developed a custom logic to classify wafers by grade and monitor their counts. Once we gathered 17 wafers of the same grade, the system automatically created a new 'EPI Lot' for inventory or sale. To handle this, I designed a flexible Lot Genealogy system. This ensured 100% wafer-level traceability, even when these Lots were reintroduced into mass production. This significantly improved our data accuracy and production efficiency."
-  },
-  {
-    "id": "q5",
-    "category": "Technical",
-    "question": "How did you solve the wireless printer issue?",
-    "answer": "I solved a big problem by setting up wireless printers in the line. We didn't have enough LAN ports, so the manufacturing team suggested using Wi-Fi. But it was hard because our FAB only allows 'Static IPs' for security. I had to manually configure each printer's network to follow these strict rules. Also, I had a language issue. Our MES uses ZPL, but the new printers use TSPL. So, I wrote a simple program to convert ZPL into TSPL in real-time. In the end, we saved a lot of money on infrastructure costs. The team is very happy because they can now print labels anywhere in the line."
-  },
-  {
-    "id": "q6",
-    "category": "Technical",
-    "question": "Tell us about your AI project for CD-SEM.",
-    "answer": "I am currently developing an automated sample confirmation system using CD-SEM images.\nBefore, engineers had to manually check and compare data every morning. \nTo automate this, I designed a system that downloads CD images from equipment via FTP.\nThen, my AI model recognizes the numeric values within the images. \nThe system automatically sends these values to the MES to verify if they match the system data.\nThis automation will significantly reduce manual work and save a lot of time for our engineers."
-  },
-  {
-    "id": "q7",
-    "category": "Behavioral",
-    "question": "How do you handle conflict with other teams?",
-    "answer": "I made a new system for batch processing.\nI develped the batch auto sort system. \nIn this system, the first and last Lots must be measured. \nBut the Production team and the Engineering team had different opinions about skipping this process.\nThe engineers wanted to allow manual skips to production team at night when they were not there. \nBut the Production team was worried about making mistakes without an engineer.\nTo solve this, I created a special group within the Production team. \nOnly authorized members could skip the process. \nThis satisfied both teams because the system was now safe and flexible."
-  },
-  {
-    "id": "q8",
-    "category": "Behavioral",
-    "question": "What is your greatest professional achievement?",
-    "answer": "My greatest achievement was being promoted to Senior Engineer in 2026, which recognized my lead role in the MOCVD integration project. I took ownership of the entire system architecture from end-to-end. By designing the logic for complex batch processing and ensuring seamless data flow, I realized my potential to handle high-stakes, full-scale system designs that directly improve fab productivity."
-  },
-  {
-    "id": "q9",
-    "category": "Behavioral",
-    "question": "Describe a time you failed and how you handled it.",
-    "answer": "While optimizing the automated Defect Management logic, I encountered a bug that caused lot processing to stall. I immediately performed a root cause analysis and deployed a patch to stabilize the line. This taught me that in a semiconductor environment, every line of code directly impacts production. Since then, I have adopted a rigorous testing and validation process to ensure 100% system reliability."
-  },
-  {
-    "id": "q10",
     "category": "Personality",
     "question": "What are your career goals?",
     "answer": "I aim to become a Global MES Architect at Lam Research, leading the digital transformation of R&D centers worldwide through the CM platform and advanced AI analytics."
   },
   {
-    "id": "q12",
-    "category": "Technical",
-    "question": "Explain socket communication in your C-server.",
-    "answer": "I use structured TCP/IP socket communication to ensure reliable, low-latency data transfer between the C-based server and C# client, which is vital for real-time wafer tracking."
-  },
-  {
-    "id": "q13",
-    "category": "Behavioral",
-    "question": "How do you prioritize multiple urgent tasks?",
-    "answer": "When handling multiple tasks, I align my priorities with the team and company's goals rather than deciding in isolation. I regularly consult with my manager and coordinate schedules with other departments. This collaborative approach ensures that the most critical production-related issues are addressed first while maintaining technical alignment across the organization."
-  },
-  {
-    "id": "q14",
-    "category": "Lam Research",
-    "question": "How do you feel about working with a global manager?",
-    "answer": "I have experience communicating technical topics in English during audits and documentation reviews.\nWhen communicating, I try to focus on clarity rather than complex expressions.\nI usually prepare key technical points in advance and explain them using simple structure.\nIf there is misunderstanding, I confirm again using diagrams or examples.\nI believe technical communication is more about clarity than perfect English."
-  },
-  {
-    "id": "q15",
-    "category": "Technical",
-    "question": "What is the difference between MES for R&D vs Mass Production?",
-    "answer": "Mass production focuses on throughput and stability, while R&D requires high flexibility for frequent process changes. An R&D MES must allow researchers to modify parameters without full system deployments."
-  },
-  {
-    "id": "q16",
-    "category": "Behavioral",
-    "question": "How do you mentor junior developers?",
-    "answer": "I take a structured approach to mentoring. I first ensure they understand the core system architecture and source code. Then, I provide scenario-based training on lot processing to prepare them for various real-world fab situations. My goal is to build their independence by sharing not just the 'how,' but the technical 'why' behind our processes."
-  },
-  {
-    "id": "q17",
-    "category": "Personality",
-    "question": "What is your biggest weakness?",
-    "answer": "My weakness is that I sometimes over-analyze situations, which can lead to hesitation. To overcome this, I make it a point to communicate my thoughts early with colleagues and managers. This proactive sharing helps me gain diverse perspectives and allows for faster, more confident decision-making."
-  },
-  {
-    "id": "q18",
-    "category": "Technical",
-    "question": "How do you handle 'Dirty Reads' in Oracle DB?",
-    "answer": "I utilize proper transaction isolation levels and 'Select for Update' locks when necessary to ensure data consistency during simultaneous lot movements."
-  },
-  {
-    "id": "q19",
+    "id": "q5",
     "category": "Lam Research",
     "question": "What do you know about Lam's Giheung R&D Center?",
     "answer": "It's a state-of-the-art facility (KTC) focused on next-gen semiconductor equipment. My role would involve digitalizing these R&D workflows using the CM platform."
   },
   {
-    "id": "q20",
+    "id": "q6",
     "category": "Technical",
-    "question": "Describe your experience with C# multithreading.",
-    "answer": "I use Task Parallel Library (TPL) in C# to handle multiple UI updates and background data fetching, ensuring the MES client remains responsive even under heavy load."
+    "question": "Describe the MOCVD batch processing project.",
+    "answer": "My most challenging project was integrating the MOCVD process, which didn't follow our standard 25-wafer system. It was complex because we had to split 15 wafers into 5-wafer batches for processing. I developed a custom logic to classify wafers by grade and monitor their counts. Once we gathered 17 wafers of the same grade, the system automatically created a new 'EPI Lot' for inventory or sale. To handle this, I designed a flexible Lot Genealogy system. This ensured 100% wafer-level traceability, even when these Lots were reintroduced into mass production. This significantly improved our data accuracy and production efficiency."
   },
   {
-    "id": "q21",
+    "id": "q7",
+    "category": "Technical",
+    "question": "Tell us about your AI project for CD-SEM.",
+    "answer": "I am currently developing an automated sample confirmation system using CD-SEM images.\nBefore, engineers had to manually check and compare data every morning. \nTo automate this, I designed a system that downloads CD images from equipment via FTP.\nThen, my AI model recognizes the numeric values within the images. \nThe system automatically sends these values to the MES to verify if they match the system data.\nThis automation will significantly reduce manual work and save a lot of time for our engineers."
+  },
+  {
+    "id": "q8",
     "category": "Behavioral",
     "question": "Give an example of a time you went above and beyond.",
     "answer": "I developed a Python-based automation tool for cleaning PCM raw data, which reduced engineer workload from half a day to just 30 minutes. The tool automates data uploads, parameter cleaning, and outlier removal while providing real-time statistical analysis and visualizations. This 90% reduction in processing time allowed our engineers to focus more on high-level analysis rather than manual data entry."
   },
   {
-    "id": "q22",
+    "id": "q9",
     "category": "Technical",
-    "question": "How do you ensure code quality?",
-    "answer": "I adhere to SOLID principles and use static analysis tools. I also believe that meaningful unit testing for core business logic is essential for long-term system stability."
+    "question": "How did you solve the wireless printer issue?",
+    "answer": "I solved a big problem by setting up wireless printers in the line. We didn't have enough LAN ports, so the manufacturing team suggested using Wi-Fi. But it was hard because our FAB only allows 'Static IPs' for security. I had to manually configure each printer's network to follow these strict rules. Also, I had a language issue. Our MES uses ZPL, but the new printers use TSPL. So, I wrote a simple program to convert ZPL into TSPL in real-time. In the end, we saved a lot of money on infrastructure costs. The team is very happy because they can now print labels anywhere in the line."
   },
   {
-    "id": "q23",
-    "category": "Behavioral",
-    "question": "How do you handle tight deadlines?",
-    "answer": "I prioritize tasks based on their impact on production and focus on the most critical items first. If a deadline is at risk, I proactively communicate with the stakeholders to manage expectations and adjust schedules early. I believe transparency and early communication are key to maintaining project integrity under tight deadlines."
-  },
-  {
-    "id": "q24",
-    "category": "Personality",
-    "question": "How would your colleagues describe you?",
-    "answer": "They would describe me as a reliable problem-solver who can bridge the gap between legacy systems (C/C++) and modern technologies (AI/Python)."
-  },
-  {
-    "id": "q25",
-    "category": "Technical",
-    "question": "Explain the concept of 'Traceability' in MES.",
-    "answer": "Traceability is the ability to track every single event for a wafer—from raw material to finished product—including equipment history, operator IDs, and measurement data."
-  },
-  {
-    "id": "q26",
-    "category": "Technical",
-    "question": "What is your approach to API design?",
-    "answer": "I follow RESTful principles, focusing on resource-oriented endpoints, clear status codes, and thorough documentation (Swagger) to ensure easy integration with other systems."
-  },
-  {
-    "id": "q27",
-    "category": "Behavioral",
-    "question": "What do you do when you disagree with your manager?",
-    "answer": "I highly value my manager's experience and expertise, so I generally respect their direction. However, if I have a data-backed alternative, I professionally present my suggestions to find the best middle ground. Once a final decision is made, I fully commit to it and work hard to make the project successful."
-  },
-  {
-    "id": "q28",
-    "category": "Personality",
-    "question": "What motivates you as a developer?",
-    "answer": "Solving real-world problems that improve manufacturing yield. Seeing my code directly affect the efficiency of a semiconductor FAB is incredibly rewarding."
-  },
-  {
-    "id": "q29",
-    "category": "Technical",
-    "question": "How do you handle large file uploads (like logs) in C#?",
-    "answer": "I use buffered streams or chunked uploads to prevent memory overflow, ensuring the system can handle large equipment logs without crashing the client."
-  },
-  {
-    "id": "q30",
-    "category": "Lam Research",
-    "question": "What is your salary expectation?",
-    "answer": "My current total package is around 83 million KRW, with a base salary of 65 million. Considering the move to a global leader like Lam Research and the specific expertise I bring in MES and automation, I am targeting a base salary of 80 million KRW. However, I am open to discussing the total compensation package based on Lam's incentive structure."
-  },
-  {
-    "id": "q31",
+    "id": "q10",
     "category": "Behavioral",
     "question": "Describe a difficult technical bug you solved.",
     "answer": "The most challenging issue was a database hang caused by a version-specific Oracle bug. My first priority was fab stability, so I immediately switched to a redundant server and restarted the systems to restore lot processing within 5 minutes. Afterward, I collaborated with database administrators and Oracle support to implement a permanent patch, ensuring the issue wouldn't recur."
   },
   {
-    "id": "q32",
+    "id": "q11",
     "category": "Technical",
-    "question": "What is a 'Stored Procedure' and why use it?",
-    "answer": "It's code stored in the DB. I use it for complex, data-heavy operations to reduce network traffic and take advantage of Oracle's pre-compiled execution plans."
+    "question": "What is the difference between MES for R&D vs Mass Production?",
+    "answer": "Mass production focuses on throughput and stability, while R&D requires high flexibility for frequent process changes. An R&D MES must allow researchers to modify parameters without full system deployments."
   },
   {
-    "id": "q33",
-    "category": "Personality",
-    "question": "How do you stay updated with new technology?",
-    "answer": "I am very interested in AI and data analysis. Recently, I took an advanced Python course at my company to update my skills. Last year, I developed a Python program to automate raw data handling. Before, engineers handled messy Excel data manually. My program cleans the data and creates visual graphs automatically. This system improved data accuracy and saved a lot of time. Now, I am working on a new project to apply AI models to our MES."
-  },
-  {
-    "id": "q34",
-    "category": "Behavioral",
-    "question": "Tell us about a time you showed leadership.",
-    "answer": "During a system migration, I took the lead in training the production team. I created a simplified manual and held Q&A sessions, resulting in zero operational errors during the transition."
-  },
-  {
-    "id": "q35",
+    "id": "q12",
     "category": "Technical",
-    "question": "What is the role of an ERP in relation to an MES?",
-    "answer": "ERP handles 'What to make' (planning/business), while MES handles 'How to make it' (execution/real-time). I ensure the handshake between the two is seamless for accurate production data."
+    "question": "What is your experience with CM (Critical Manufacturing) platform?",
+    "answer": "I am confident in learning new MES platforms quickly.\nBecause MES systems share common concepts such as workflow, material tracking, equipment integration, and data collection.\nWhen learning new systems, I usually first understand architecture, then data model, then customization logic.\nI have adapted to new internal systems quickly before using this approach.\nSo I believe I can also learn Critical Manufacturing MES effectively."
   },
   {
-    "id": "q36",
-    "category": "Behavioral",
-    "question": "How do you handle a toxic teammate?",
-    "answer": "I stay professional and focus strictly on the task. I try to understand their perspective, but if it affects project delivery, I escalate it to my manager with specific facts."
-  },
-  {
-    "id": "q37",
+    "id": "q13",
     "category": "Technical",
-    "question": "What are the benefits of using Angular for an MES UI?",
-    "answer": "Angular provides a robust component-based architecture and two-way data binding, which is excellent for creating complex, real-time dashboards like equipment monitors."
+    "question": "Explain the concept of 'Traceability' in MES.",
+    "answer": "Traceability is the ability to track every single event for a wafer—from raw material to finished product—including equipment history, operator IDs, and measurement data."
   },
   {
-    "id": "q38",
-    "category": "Lam Research",
-    "question": "Are you willing to travel to Singapore or the US for training?",
-    "answer": "Absolutely. I am eager to learn from Lam's global experts and bring that knowledge back to the KTC team in Korea."
-  },
-  {
-    "id": "q39",
-    "category": "Technical",
-    "question": "Explain 'Deadlock' in a database.",
-    "answer": "It's when two processes hold locks that the other needs. I prevent this by ensuring all transactions access resources in a consistent, predefined order."
-  },
-  {
-    "id": "q40",
-    "category": "Behavioral",
-    "question": "Describe a time you had to work with a difficult user.",
-    "answer": "A production manager was frustrated with a new UI. I sat down with them, listened to their pain points, and made three small UI tweaks that saved them significant clicks, winning their support."
-  },
-  {
-    "id": "q41",
-    "category": "Personality",
-    "question": "What are your hobbies?",
-    "answer": "I enjoy staying active through weight training and futsal, which helps me maintain the physical and mental stamina needed for a demanding engineering role. I also enjoy console gaming as a way to unwind and recharge my focus."
-  },
-  {
-    "id": "q42",
-    "category": "Technical",
-    "question": "What is CI/CD in the context of MES?",
-    "answer": "It's the automated process of testing and deploying code. I believe automating the deployment of MES patches is key to reducing human error in the FAB."
-  },
-  {
-    "id": "q43",
-    "category": "Behavioral",
-    "question": "How do you handle constructive criticism?",
-    "answer": "I see it as an opportunity to grow. I listen, take notes, and ask for specific examples so I can improve my performance immediately."
-  },
-  {
-    "id": "q44",
-    "category": "Technical",
-    "question": "What is an 'Inner Join' vs 'Left Join' in Oracle?",
-    "answer": "Inner join returns records with matching values in both tables, while left join returns all records from the left table and matched records from the right. I use left joins when I need to see lots that might not have measurement data yet."
-  },
-  {
-    "id": "q45",
-    "category": "Lam Research",
-    "question": "Do you have any reverse questions for us?",
-    "answer": "I have two questions. First, what would be the most critical milestones or projects you would expect me to focus on during my first six months? Second, how does the team typically communicate and collaborate when solving complex technical challenges?"
-  },
-  {
-    "id": "q46",
-    "category": "Behavioral",
-    "question": "What would you do if a system went down at 3 AM?",
-    "answer": "I fully understand that a semiconductor FAB operates 24/7. As a senior MES engineer, I always stay reachable after hours. In fact, I currently handle on-call requests once or twice a week. I am committed to taking immediate action whenever a critical system issue arises to minimize any downtime in the FAB."
-  },
-  {
-    "id": "q47",
+    "id": "q14",
     "category": "Technical",
     "question": "What is the importance of Data Integrity in MES?",
     "answer": "In semiconductors, incorrect data can lead to scrap wafers worth millions. I implement strict validation logic at both the UI and DB levels to ensure data accuracy."
   },
   {
-    "id": "q48",
-    "category": "Personality",
-    "question": "Where do you want to be in 10 years?",
-    "answer": "I hope to be a key leader in Lam Research's global IT planning division, shaping the future of smart manufacturing across the semiconductor industry."
+    "id": "q15",
+    "category": "Technical",
+    "question": "How do you handle 'Dirty Reads' in Oracle DB?",
+    "answer": "I utilize proper transaction isolation levels and 'Select for Update' locks when necessary to ensure data consistency during simultaneous lot movements."
   },
   {
-    "id": "q49",
+    "id": "q16",
+    "category": "Technical",
+    "question": "Explain 'Deadlock' in a database.",
+    "answer": "It's when two processes hold locks that the other needs. I prevent this by ensuring all transactions access resources in a consistent, predefined order."
+  },
+  {
+    "id": "q17",
+    "category": "Technical",
+    "question": "Describe your experience with C# multithreading.",
+    "answer": "I use Task Parallel Library (TPL) in C# to handle multiple UI updates and background data fetching, ensuring the MES client remains responsive even under heavy load."
+  },
+  {
+    "id": "q18",
+    "category": "Technical",
+    "question": "What is a 'Stored Procedure' and why use it?",
+    "answer": "It's code stored in the DB. I use it for complex, data-heavy operations to reduce network traffic and take advantage of Oracle's pre-compiled execution plans."
+  },
+  {
+    "id": "q19",
     "category": "Technical",
     "question": "Explain 'Normalization' in DB design.",
     "answer": "It's the process of organizing data to reduce redundancy. In MES, we normalize to ensure that process changes only need to be updated in one place."
   },
   {
-    "id": "q50",
+    "id": "q20",
+    "category": "Behavioral",
+    "question": "How do you handle conflict with other teams?",
+    "answer": "I made a new system for batch processing.\nI develped the batch auto sort system. \nIn this system, the first and last Lots must be measured. \nBut the Production team and the Engineering team had different opinions about skipping this process.\nThe engineers wanted to allow manual skips to production team at night when they were not there. \nBut the Production team was worried about making mistakes without an engineer.\nTo solve this, I created a special group within the Production team. \nOnly authorized members could skip the process. \nThis satisfied both teams because the system was now safe and flexible."
+  },
+  {
+    "id": "q21",
+    "category": "Lam Research",
+    "question": "How do you feel about working with a global manager?",
+    "answer": "I have experience communicating technical topics in English during audits and documentation reviews.\nWhen communicating, I try to focus on clarity rather than complex expressions.\nI usually prepare key technical points in advance and explain them using simple structure.\nIf there is misunderstanding, I confirm again using diagrams or examples.\nI believe technical communication is more about clarity than perfect English."
+  },
+  {
+    "id": "q22",
+    "category": "Behavioral",
+    "question": "How do you prioritize multiple urgent tasks?",
+    "answer": "When handling multiple tasks, I align my priorities with the team and company's goals rather than deciding in isolation. I regularly consult with my manager and coordinate schedules with other departments. This collaborative approach ensures that the most critical production-related issues are addressed first while maintaining technical alignment across the organization."
+  },
+  {
+    "id": "q23",
+    "category": "Behavioral",
+    "question": "How do you mentor junior developers?",
+    "answer": "I take a structured approach to mentoring. I first ensure they understand the core system architecture and source code. Then, I provide scenario-based training on lot processing to prepare them for various real-world fab situations. My goal is to build their independence by sharing not just the 'how,' but the technical 'why' behind our processes."
+  },
+  {
+    "id": "q24",
+    "category": "Behavioral",
+    "question": "Describe a time you failed and how you handled it.",
+    "answer": "While optimizing the automated Defect Management logic, I encountered a bug that caused lot processing to stall. I immediately performed a root cause analysis and deployed a patch to stabilize the line. This taught me that in a semiconductor environment, every line of code directly impacts production. Since then, I have adopted a rigorous testing and validation process to ensure 100% system reliability."
+  },
+  {
+    "id": "q25",
+    "category": "Behavioral",
+    "question": "Describe a time you had to work with a difficult user.",
+    "answer": "A production manager was frustrated with a new UI. I sat down with them, listened to their pain points, and made three small UI tweaks that saved them significant clicks, winning their support."
+  },
+  {
+    "id": "q26",
     "category": "Personality",
-    "question": "Why should we hire you over other candidates?",
-    "answer": "That’s a great question. While my major was Electronics and Information Engineering, I became fascinated by how software acts as the 'brain' of complex hardware systems.\nTo pursue this passion, I proactively took CS-related courses such as Data Structures and AI, Programming, which weren't mandatory for my major.\nI also spent a lot of time self-studying modern frameworks and database optimization. \nThis journey from an Electronics major to a Professional MES Developer proves my ability to learn new technologies rapidly and independently.\nAt Lam Research, we use a global MES platform with TypeScript and Angular.\nI am confident that my 'self-starter' mindset will allow me to master these new stacks quickly and bridge the gap between semiconductor hardware and software systems."
+    "question": "What is your biggest weakness?",
+    "answer": "My weakness is that I sometimes over-analyze situations, which can lead to hesitation. To overcome this, I make it a point to communicate my thoughts early with colleagues and managers. This proactive sharing helps me gain diverse perspectives and allows for faster, more confident decision-making."
+  },
+  {
+    "id": "q27",
+    "category": "Behavioral",
+    "question": "What would you do if a system went down at 3 AM?",
+    "answer": "I fully understand that a semiconductor FAB operates 24/7. As a senior MES engineer, I always stay reachable after hours. In fact, I currently handle on-call requests once or twice a week. I am committed to taking immediate action whenever a critical system issue arises to minimize any downtime in the FAB."
+  },
+  {
+    "id": "q28",
+    "category": "Lam Research",
+    "question": "Are you willing to travel to Singapore or the US for training?",
+    "answer": "Absolutely. I am eager to learn from Lam's global experts and bring that knowledge back to the KTC team in Korea."
+  },
+  {
+    "id": "q29",
+    "category": "Lam Research",
+    "question": "What is your salary expectation?",
+    "answer": "My current total package is around 83 million KRW, with a base salary of 65 million. Considering the move to a global leader like Lam Research and the specific expertise I bring in MES and automation, I am targeting a base salary of 80 million KRW. However, I am open to discussing the total compensation package based on Lam's incentive structure."
+  },
+  {
+    "id": "q30",
+    "category": "Lam Research",
+    "question": "Do you have any reverse questions for us?",
+    "answer": "I have two questions. First, what would be the most critical milestones or projects you would expect me to focus on during my first six months? Second, how does the team typically communicate and collaborate when solving complex technical challenges?"
   }
 ]
