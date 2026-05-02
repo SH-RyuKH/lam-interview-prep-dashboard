@@ -1,6 +1,10 @@
 import { Injectable, signal, computed, effect } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { QAItem, QaCategory } from '../models/qa.model';
+import { environment } from '../../environments/environment';
+
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, onSnapshot, doc, setDoc, updateDoc, deleteDoc, writeBatch } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -11,38 +15,59 @@ export class QaStateService {
   // The primary state using Angular Signals
   readonly qaList = signal<QAItem[]>([]);
   
+  private app = initializeApp(environment.firebase);
+  private db = getFirestore(this.app);
+  private qaCollection = collection(this.db, 'qaList');
+  
+  // Track if we already attempted to load default json to prevent loop
+  private attemptedDefaultLoad = false;
+  
   constructor(private http: HttpClient) {
-    this.loadInitialData();
-    
-    // Automatically save to localStorage whenever qaList changes
-    effect(() => {
-      const data = this.qaList();
-      if (data.length > 0) {
-        localStorage.setItem(this.STORAGE_KEY, JSON.stringify(data));
+    this.setupFirestoreListener();
+  }
+
+  private setupFirestoreListener() {
+    onSnapshot(this.qaCollection, (snapshot) => {
+      if (snapshot.empty && this.qaList().length === 0 && !this.attemptedDefaultLoad) {
+        // If Firestore is empty, try loading from assets and populate Firestore
+        this.attemptedDefaultLoad = true;
+        this.loadDefaultJsonToFirestore();
+      } else {
+        const data: QAItem[] = [];
+        snapshot.forEach(doc => {
+          data.push({ ...doc.data() } as QAItem);
+        });
+        this.qaList.set(data);
       }
+    }, (error) => {
+      console.error("Error listening to Firestore:", error);
     });
   }
 
-  /**
-   * Load data from localStorage or fallback to assets/data.json
-   */
-  private loadInitialData() {
-    const stored = localStorage.getItem(this.STORAGE_KEY);
-    if (stored) {
-      try {
-        const parsed = JSON.parse(stored);
-        // Deep validation to check for corrupted empty object arrays
-        if (Array.isArray(parsed) && parsed.length > 0 && parsed[0].question) {
-          this.qaList.set(parsed);
-          return;
+  private loadDefaultJsonToFirestore() {
+    this.http.get<QAItem[]>('assets/data.json').subscribe({
+      next: async (data) => {
+        try {
+          if (!data || data.length === 0) return;
+          // Upload to Firestore using batch
+          const batch = writeBatch(this.db);
+          data.forEach(item => {
+            // ensure it has an id
+            const id = item.id || crypto.randomUUID();
+            item.id = id;
+            const docRef = doc(this.qaCollection, id);
+            batch.set(docRef, item);
+          });
+          await batch.commit();
+          console.log('Successfully initialized Firestore with data.json');
+        } catch (error) {
+          console.error('Failed to initialize Firestore', error);
         }
-      } catch (e) {
-        console.error('Failed to parse stats from localStorage', e);
+      },
+      error: (err) => {
+        console.error('Failed to load initial data.json', err);
       }
-    }
-    
-    // Fallback to initial assets
-    this.loadDefaultJson();
+    });
   }
 
   /**
@@ -50,9 +75,21 @@ export class QaStateService {
    */
   loadDefaultJson() {
     this.http.get<QAItem[]>('assets/data.json').subscribe({
-      next: (data) => {
-        this.qaList.set(data);
-        alert('data.json 내용을 성공적으로 가져왔습니다!');
+      next: async (data) => {
+        try {
+          const batch = writeBatch(this.db);
+          data.forEach(item => {
+            const id = item.id || crypto.randomUUID();
+            item.id = id;
+            const docRef = doc(this.qaCollection, id);
+            batch.set(docRef, item);
+          });
+          await batch.commit();
+          alert('data.json 내용을 성공적으로 Firestore에 복원했습니다!');
+        } catch(e) {
+          console.error(e);
+          alert('Firestore에 저장하는데 실패했습니다.');
+        }
       },
       error: (err) => {
         console.error('Failed to load initial data.json', err);
@@ -61,20 +98,24 @@ export class QaStateService {
     });
   }
 
-  addQa(item: Omit<QAItem, 'id'>) {
+  async addQa(item: Omit<QAItem, 'id'>) {
+    const id = crypto.randomUUID();
     const newItem: QAItem = {
       ...item,
-      id: crypto.randomUUID()
+      id
     };
-    this.qaList.update(list => [...list, newItem]);
+    const docRef = doc(this.qaCollection, id);
+    await setDoc(docRef, newItem);
   }
 
-  updateQa(updatedItem: QAItem) {
-    this.qaList.update(list => list.map(item => item.id === updatedItem.id ? updatedItem : item));
+  async updateQa(updatedItem: QAItem) {
+    const docRef = doc(this.qaCollection, updatedItem.id);
+    await updateDoc(docRef, { ...updatedItem });
   }
 
-  deleteQa(id: string) {
-    this.qaList.update(list => list.filter(item => item.id !== id));
+  async deleteQa(id: string) {
+    const docRef = doc(this.qaCollection, id);
+    await deleteDoc(docRef);
   }
 
   /**
@@ -96,18 +137,26 @@ export class QaStateService {
    */
   importJson(file: File) {
     const reader = new FileReader();
-    reader.onload = (e) => {
+    reader.onload = async (e) => {
       try {
         const content = e.target?.result as string;
         const parsed = JSON.parse(content);
         if (Array.isArray(parsed)) {
-          this.qaList.set(parsed);
-          alert('Successfully imported data.');
+          const batch = writeBatch(this.db);
+          parsed.forEach(item => {
+            const id = item.id || crypto.randomUUID();
+            item.id = id;
+            const docRef = doc(this.qaCollection, id);
+            batch.set(docRef, item);
+          });
+          await batch.commit();
+          alert('Successfully imported data to Firestore.');
         } else {
           alert('Invalid JSON file format.');
         }
       } catch (err) {
-        alert('Failed to read file.');
+        console.error(err);
+        alert('Failed to read file or write to Firestore.');
       }
     };
     reader.readAsText(file);
